@@ -254,6 +254,7 @@ func openTopic(brokers []string, config *sarama.Config, topicName string, opts *
 // SendBatch implements driver.Topic.SendBatch.
 func (t *topic) SendBatch(ctx context.Context, dms []*driver.Message) error {
 	// Convert the messages to a slice of sarama.ProducerMessage.
+	fmt.Println("SendBatch Test Saurabh")
 	ms := make([]*sarama.ProducerMessage, 0, len(dms))
 	for _, dm := range dms {
 		var kafkaKey sarama.Encoder
